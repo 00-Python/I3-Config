@@ -2,6 +2,29 @@
 
 This repository contains the configuration file (`config`) for the i3 window manager, tailored for the Manjaro Linux distribution. Below is an explanation of the keybindings and their corresponding code snippets in the configuration file.
 
+## Table of Contents
+
+- [i3 Window Manager Configuration File Boilerplate](#i3-window-manager-configuration-file-boilerplate)
+- [Keybindings](#keybindings)
+  - [General Keybindings](#general-keybindings)
+  - [Application Launch Keybindings](#application-launch-keybindings)
+  - [Navigation Keybindings](#navigation-keybindings)
+  - [Window Movement Keybindings](#window-movement-keybindings)
+  - [Layout Keybindings](#layout-keybindings)
+  - [Miscellaneous Keybindings](#miscellaneous-keybindings)
+  - [Window Resizing Keybindings (While in Resize Mode)](#window-resizing-keybindings-while-in-resize-mode)
+- [Editing and Customizing the Configuration](#editing-and-customizing-the-configuration)
+  - [Changing the Look of the System](#changing-the-look-of-the-system)
+    - [Background](#background)
+    - [Toolbar Fonts](#toolbar-fonts)
+    - [System Colors](#system-colors)
+    - [Menus](#menus)
+    - [Additional Customization](#additional-customization)
+    - [Applying Changes](#applying-changes)
+    - [Additional Tools for Customization](#additional-tools-for-customization)
+- [Copying the Configuration to the Correct Location](#copying-the-configuration-to-the-correct-location)
+
+
 ## Keybindings
 
 ### General Keybindings
@@ -155,17 +178,94 @@ To edit and customize the i3 configuration file:
 
 1. Clone this repository to your local machine using Git:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/00-Python/I3-Config.git
    ```
 
 2. Navigate to the cloned repository directory:
    ```bash
-   cd <repository_name>
+   cd I3-Config/
    ```
 
-3. Open the `config` file in a text editor of your choice. You can customize keybindings, colors, fonts, and other settings according to your preferences.
+3. Open the `config` file in a text editor of your choice. 
 
 4. Save the changes after customization.
+
+You can customize keybindings, colors, fonts, and other settings according to your preferences.
+
+
+### Changing the Look of the System
+
+Customizing the appearance of your i3 system allows you to personalize various aspects such as backgrounds, toolbar fonts, system colors, menus, and more. Below are detailed steps and options for customization:
+
+#### Background
+
+1. **Wallpaper**: Choose a wallpaper that suits your taste. You can find wallpapers online or use your own images.
+
+2. **Set Wallpaper**: Use a tool like `feh` to set the wallpaper:
+   ```bash
+   feh --bg-fill /path/to/your/wallpaper.jpg
+   ```
+
+#### Toolbar Fonts
+
+1. **Font Selection**: Modify the font settings in your i3 configuration file. You can specify the font family and size:
+   ```bash
+   font pango:Roboto Mono 10
+   ```
+
+#### System Colors
+
+1. **Color Scheme**: Adjust the color scheme in your i3 configuration file. Customize variables such as `$bg-color`, `$text-color`, `$focused-bg-color`, `$focused-text-color`, etc.:
+   ```bash
+   set $bg-color #2E3440
+   set $text-color #D8DEE9
+   set $focused-bg-color #3B4252
+   set $focused-text-color #E5E9F0
+   ```
+
+#### Menus
+
+1. **Dmenu Customization**: Customize the appearance of Dmenu using command-line options in your i3 configuration file. You can modify fonts, colors, and more:
+   ```bash
+   bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Roboto Mono-10' -nb '$bg-color' -nf '$text-color' -sb '$focused-bg-color' -sf '$focused-text-color'
+   ```
+
+#### Additional Customization
+
+1. **Bar Settings**: Modify the appearance of the i3 status bar by adjusting settings in your configuration file. You can change colors, fonts, and add or remove status components:
+   ```bash
+   bar {
+       status_command i3status
+       colors {
+           background $bg-color
+           statusline $text-color
+       }
+   }
+   ```
+
+2. **Window Borders**: Customize the appearance of window borders by adjusting border styles and colors:
+   ```bash
+   default_border pixel 2
+   default_floating_border pixel 2
+   ```
+
+3. **Transparency**: Add transparency effects to windows and menus for a sleeker look. You can use tools like `compton` for this purpose.
+
+#### Applying Changes
+
+1. **Save and Restart**: After making changes to your i3 configuration file, save the file and restart i3 for the changes to take effect:
+   ```bash
+   i3-msg restart
+   ```
+
+#### Additional Tools for Customization
+
+1. **i3blocks**: Use i3blocks to create customizable status bars with various plugins for system information such as CPU usage, memory usage, battery status, etc.
+
+2. **Rofi**: Rofi is a versatile application launcher that can also be used as a window switcher, SSH launcher, and more. Customize Rofi themes and colors to match your system's look.
+
+3. **Polybar**: Polybar is another popular status bar that offers extensive customization options, including fonts, colors, modules, and more.
+
 
 ## Copying the Configuration to the Correct Location
 
