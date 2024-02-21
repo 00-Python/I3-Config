@@ -2,34 +2,6 @@
 
 This repository contains the configuration file (`config`) for the i3 window manager, tailored for the Manjaro Linux distribution. Below is an explanation of the keybindings and their corresponding code snippets in the configuration file.
 
-## Copying the Configuration to the Correct Location
-
-Once you've made your customizations, follow these steps to copy the configuration to the correct location:
-
-1. Navigate to the i3 configuration directory:
-   ```bash
-   cd ~/.config/i3/
-   ```
-
-2. Make a backup of your existing configuration file (optional but recommended):
-   ```bash
-   cp config config_backup
-   ```
-
-3. Copy the modified `config` file from the cloned repository to the i3 configuration directory:
-   ```bash
-   cp <path_to_cloned_repository>/config .
-   ```
-
-4. Restart i3 for the changes to take effect:
-   ```bash
-   i3-msg restart
-   ```
-
-Now, your customized i3 configuration should be applied.
-
-
-
 ## Keybindings
 
 ### General Keybindings
@@ -194,3 +166,29 @@ To edit and customize the i3 configuration file:
 3. Open the `config` file in a text editor of your choice. You can customize keybindings, colors, fonts, and other settings according to your preferences.
 
 4. Save the changes after customization.
+
+## Copying the Configuration to the Correct Location
+
+Once you've made your customizations, follow these steps to copy the configuration to the correct location:
+
+1. Navigate to the i3 configuration directory:
+   ```bash
+   cd ~/.config/i3/
+   ```
+
+2. Make a backup of your existing configuration file (optional but recommended):
+   ```bash
+   cp config config_backup
+   ```
+
+3. Copy the modified `config` file from the cloned repository to the i3 configuration directory:
+   ```bash
+   cp <path_to_cloned_repository>/config .
+   ```
+
+4. Restart i3 for the changes to take effect:
+   ```bash
+   i3-msg restart
+   ```
+
+Now, your customized i3 configuration should be applied.
